@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-backend-devops
+  labels:
+    run: ingress-default-backend
+  namespace: haproxy-controller-devops
+spec:
+  selector:
+    run: ingress-default-backend 
+  ports:
+  - name: port-backend
+    port: 8080
+    targetPort: 8080
